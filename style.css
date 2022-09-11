@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  color: #005f2c;
+  border: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px;
+  padding: 10px;
+  background: #7FB77E;
+  overflow-y: hidden;
+}
+
+.question, .answers {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: #B1D7B4;
+  box-shadow: inset 0 0 10px #7FB77E;
+}
+
+.question {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 4fr;
+}
+
+.question .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 100px;
+  margin-left: 20px;
+}
+
+.timer, .score {
+  align-self: center;
+  font-weight: 600;
+}
+
+.timer {
+  justify-self: right;
+  margin-right: 50px;
+}
+
+.score {
+  justify-self: left;
+  margin-left: 50px;
+}
+
+.ques {
+  align-self: center;
+  padding: 0 10%;
+  text-align: center;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  justify-self: center;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.answers .ans {
+  display: flex;
+  justify-content: center;
+  align-items : center;
+  font-size: 24px;
+  font-weight: 600;
+  background: #7FB77E;
+  box-shadow: 0 0 10px #7FB77E;
+  border-radius: 20px;
+  transition: .2s;
+}
+
+.answers .ans:hover {
+  transform: scale(.98);
+  filter: brightness(1.04);
+}
+
+.answers .ans:active {
+  transform: scale(.95);
+}
+
+.mess {
+  width: 100%;
+  height: 100%;
+  background: #7FB77E;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  border-radius: 20px 20px 0 0;
+  transition: .4s;
+}
+
+.mess-closed {
+  transform: translateY(100vh);
+}
+
+.mess-opened {
+  transform: translateY(0);
+}
+
+.mess .wrapper {
+  width: 100%;
+  height: 100%;
+  background: #B1D7B4;
+  box-shadow: inset 0 0 10px #7FB77E;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+@media screen and (max-width: 450px) {
+  .timer {
+    margin: 0;
+  }
+  
+  .score {
+    margin-left: 0;
+    justify-self: center;
+  }
+
+  .ques {
+    font-size: 30px;
+  }
+
+  .answers {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mess .wrapper {
+    text-align: center;
+    font-size: 24px;
+  }
+}
